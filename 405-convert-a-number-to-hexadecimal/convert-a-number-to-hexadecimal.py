@@ -6,11 +6,11 @@ class Solution:
         if num < 0:
             num += 1 << 32
 
-        hex_chars = "0123456789abcdef"
+        digits = "0123456789abcdef"
         ans = ""
 
         while num:
-            ans = hex_chars[num % 16] + ans
-            num //= 16
+            ans = digits[num & 15] + ans
+            num >>= 4
 
         return ans
